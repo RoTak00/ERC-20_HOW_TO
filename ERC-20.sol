@@ -27,7 +27,6 @@ interface ERC20 {
     /// @return success Whether the approval was successful or not
     function approve(address _spender  , uint256 _value) external returns (bool success);
     
-    /// da capire
     /// @param _owner The address of the account owning tokens
     /// @param _spender The address of the account able to transfer the tokens
     /// @return remaining Amount of remaining tokens allowed to spent
@@ -37,11 +36,13 @@ interface ERC20 {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-contract TestCoin is ERC20 {
+//TODO: update the name of the contract according to your token name
+contract TokenName is ERC20 {
     uint256 constant private MAX_UINT256 = 2**256 - 1;
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     uint256 public totalSupply;
+   
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
@@ -51,16 +52,15 @@ contract TestCoin is ERC20 {
     string public name;                   //fancy name: eg Simon Bucks
     uint8 public decimals;                //How many decimals to show.
     string public symbol;                 //An identifier: eg SBX
-    // TODO Implement the function to take the real balance of a address from the block chain of the coin
-    //function get_real_balance(address a,)
+    
     constructor(uint256 _totalAmount) {
         balances[msg.sender] = _totalAmount;               // Give the creator all initial tokens
         totalSupply = _totalAmount;                        // Update total supply
-        name = "BCeDLT TOKEN";                                   // Set the name for display purposes
-        decimals = 18;                            // Amount of decimals for display purposes
-        symbol = "BCDLT";                               // Set the symbol for display purposes
+        name =;                                   //TODO: Set the name for display purposes
+        decimals =;                            // TODO:Amount of decimals for display purposes
+        symbol =;                               // TODO: Set the symbol for display purposes
     }
-    // TODO: cosa chiama Transfer
+    
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value, "token balance is lower than the value requested");
         balances[msg.sender] -= _value;
