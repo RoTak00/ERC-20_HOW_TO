@@ -45,7 +45,7 @@ This command generates a clean folder structure containing:
 Clone the repository containing the example ERC-20 implementation:
 
 ```bash
-git clone https://github.com/Ansijax/myToken
+git clone git@github.com:Ansijax/ERC-20_HOW_TO.git
 ```
 
 After the repository is downloaded, locate the `ERC-20.sol` file and move it into your Foundry project’s `src/` directory.
