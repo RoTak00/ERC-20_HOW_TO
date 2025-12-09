@@ -1,6 +1,6 @@
 # ERC-20 Token Deployment Guide
 
-This document explains, in a clear and detailed way, how to set up a Foundry-based development environment, customize an ERC-20 token smart contract, deploy it to the **Sepolia Testnet**, and verify it on **Etherscan**.  
+This document explains how to set up a Foundry-based development environment, customize an ERC-20 token smart contract, deploy it to the **Sepolia Testnet**, and verify it on **Etherscan**.  
 It is intended for beginners as well as developers who want a structured, step-by-step workflow.
 
 ---
@@ -162,3 +162,6 @@ Detailed instructions here:
 https://support.metamask.io/manage-crypto/tokens/how-to-display-tokens-in-metamask
 
 After importing, your token balance should appear in your wallet, reflecting the initial supply minted during deployment.
+
+
+I'd like to thank @LucaSforza for drafting the initial version of this how-to.
