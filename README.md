@@ -12,14 +12,15 @@ https://getfoundry.sh/
 
 Foundry includes essential tools such as:
 
-- **forge** → for building, testing, and deploying smart contracts
-- **cast** → for interacting with Ethereum networks from the command line
+- **forge** → for building, testing, and deploying smart contracts  
+- **cast** → for interacting with Ethereum networks from the command line  
 
 You will also need:
 
-- A **MetaMask wallet** to hold your testnet Ether and manage your keys
-- Some **Sepolia test ETH** to pay for deployment gas fees
-- An **Etherscan API key** to verify your smart contract’s source code
+- A **MetaMask wallet** to hold your testnet Ether and manage your keys  
+- Some **Sepolia test ETH** to pay for deployment gas fees  
+- An **Etherscan API key** to verify your smart contract’s source code  
+
 
 ---
 
@@ -33,9 +34,9 @@ forge init <PROJECT_NAME>
 
 This command generates a clean folder structure containing:
 
-- a `src/` directory for your Solidity contracts
-- a `test/` directory for automated tests
-- configuration files already prepared for use with Foundry
+- a `src/` directory for your Solidity contracts  
+- a `test/` directory for automated tests  
+- configuration files already prepared for use with Foundry  
 
 ---
 
@@ -59,10 +60,11 @@ Placing it inside `src/` ensures that Foundry can compile it correctly when you 
 Open the `ERC-20.sol` file and modify it to match the characteristics of your token.  
 You will need to update:
 
-- **Token name** → The full name of your token (e.g., _MyToken_)
-- **Token symbol** → A shorthand identifier (e.g., _MTK_)
-- **Decimals** → The number of decimal units (commonly `18`)
-- **Contract class name** → This should reflect the token’s name for clarity
+- **Token name** → The full name of your token (e.g., *MyToken*)  
+- **Token symbol** → A shorthand identifier (e.g., *MTK*)  
+- **Decimals** → The number of decimal units (commonly `18`)  
+- **Contract class name** → This should reflect the token’s name for clarity  
+
 
 ---
 
@@ -76,9 +78,9 @@ forge build
 
 This command will:
 
-- Analyze your smart contract code
-- Compile it using Foundry’s integrated Solidity compiler
-- Notify you about any errors or warnings
+- Analyze your smart contract code  
+- Compile it using Foundry’s integrated Solidity compiler  
+- Notify you about any errors or warnings  
 
 A successful build indicates that your contract is syntactically correct and ready for deployment.  
 If error messages appear, review the contract carefully and ensure Solidity versions and imports match your setup.
@@ -90,23 +92,20 @@ If error messages appear, review the contract carefully and ensure Solidity vers
 Before deploying, complete these setup steps:
 
 ### Enable Testnets in MetaMask
-
 By default, MetaMask hides test networks.  
 Enable them following this guide:  
 https://support.metamask.io/it/configure/networks/how-to-view-testnets-in-metamask/
 
 ### Obtain Sepolia Test ETH
-
 Sepolia ETH is required to pay for gas fees during deployment.  
 You can request test ETH from faucets such as:
 
-- https://sepolia-faucet.pk910.de/
+- https://sepolia-faucet.pk910.de/  
 - or any other trusted Sepolia faucet
 
 Typically, receiving a small amount (0.1–0.5 Sepolia ETH) is enough for multiple deployments.
 
 ### Retrieve Your Private Key
-
 You will need your private key so that `forge` can sign the deployment transaction:  
 https://support.metamask.io/it/configure/accounts/how-to-export-an-accounts-private-key/
 
@@ -129,9 +128,9 @@ Note:
 
 During deployment:
 
-- Foundry will compile (if needed) and prepare the contract bytecode
-- The transaction will be sent to the Sepolia network
-- Your wallet address will become the owner and initial token holder
+- Foundry will compile (if needed) and prepare the contract bytecode  
+- The transaction will be sent to the Sepolia network  
+- Your wallet address will become the owner and initial token holder  
 
 Once the deployment completes, Foundry will display your ETH address, your **token contract address** ("Deployed to:"), and the hash of the token's first transaction.  
 The token contract address uniquely identifies your token on the blockchain.
@@ -165,13 +164,14 @@ This step is highly recommended, especially if you intend to share your token or
 
 If MetaMask does not automatically recognize your token, you can manually add it by:
 
-1. Opening MetaMask
-2. Selecting “Import Tokens”
-3. Entering your **token contract address**
+1. Opening MetaMask  
+2. Selecting “Import Tokens”  
+3. Entering your **token contract address**  
 
 Detailed instructions here:  
 https://support.metamask.io/manage-crypto/tokens/how-to-display-tokens-in-metamask
 
 After importing, your token balance should appear in your wallet, reflecting the initial supply minted during deployment.
+
 
 I'd like to thank @LucaSforza for drafting the initial version of this how-to.
